@@ -80,7 +80,7 @@ a {
 }
 
 .flexFormContainer > div {
-	flex: 1 0 0;
+	flex: 1;
 	padding: 10px;
 	background-color: #ffffff;
 	opacity: 0.9;
@@ -88,6 +88,7 @@ a {
 
 .flexFormContainer > div:first-child {
 	margin-right: 20px;
+	max-height: 40%;
 }
 
 /* Media Queries */
