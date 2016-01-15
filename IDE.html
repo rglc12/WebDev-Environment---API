@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+    <title>Online IDE</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8" />
+    <meta name="viewpoint" content="width=device-width, initial-scale=1" />
+
+    <script>
+        var windowHeight = window.innerHeight;
+        var codeContainerHeight = (windowHeight - 40) + "px";
+
+        var container = document.getElementsByClassName("codeContainer");
+
+        function resize(){
+            for (var i = 0; i < container.length; i++) {
+                container[i].style.height = codeContainerHeight;
+            }
+        }
+
+        var buttons = document.getElementsByTagName("li");
+
+        function toggleSelected(){
+            for(var i = 0; i < buttons.length; i++){
+                buttons[i].addEventListener("click", function(){
+
+                    console.log("You clicked!");
+
+                    /*if(buttons.classlist.contains('selected') == true){
+                        buttons.classlist.remove('selected');
+                    }else{
+                        buttons.classlist.add('selected');*/
+                    }, false)
+                }
+            }
+
+
+
+        addEventListener("load", resize, false);
+
+    </script>
+
+    <link rel="stylesheet" href="css/IDEstyle.css"  />
+
+</head>
+
+<body>
+
+
+<div id="wrapper">
+
+    <div id="menuBar">
+
+        <div id="logo">
+
+            WebDev OnlineIDE
+
+        </div>
+        <div id="runButton">
+            <button id="run">Run</button>
+        </div>
+        <ul id="toggles">
+            <li class="toggle selected">HTML</li>
+            <li class="toggle">CSS</li>
+            <li class="toggle">JS</li>
+            <li style="border: none" class="toggle selected">Result</li>
+        </ul>
+
+    </div>
+
+    <div class="codeContainer" id="HTMLContainer">
+
+        <div class="codeLabel">HTML</div>
+        <textarea id="htmlCode">Example Code</textarea>
+
+    </div>
+
+    <div class="codeContainer" id="CSSContainer">
+
+        <div class="codeLabel">CSS</div>
+        <textarea id="cssCode">html {background-color: blue;}</textarea>
+
+    </div>
+
+    <div class="codeContainer" id="JSContainer">
+
+        <div class="codeLabel">JS</div>
+        <textarea id="jsCode">alert('Done');</textarea>
+
+    </div>
+
+    <div class="codeContainer" id="ResultContainer">
+
+        <div class="codeLabel">Result</div>
+        <iframe id="resultFrame"></iframe>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
