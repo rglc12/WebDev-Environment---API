@@ -39,7 +39,7 @@ a {
 }
 
 .fixedwidth{
-    width: 60%;
+    width: 75%;
     margin: 0 auto;
 }
 
@@ -68,4 +68,31 @@ a {
 
 .selected {
     font-weight: bolder;
+}
+
+/* Body Content */
+
+.flexContainer {
+    display: flex;
+    margin-top: 100px;
+}
+
+#profile {
+    flex: 1;
+    background-color: white;
+    max-height: 85vh;
+    margin-right: 20px;
+}
+
+#feedContainer {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+}
+
+.post {
+    background-color: white;
+    min-height: 10vh;
+    width: 98%;
+    margin: 1%;
 }
