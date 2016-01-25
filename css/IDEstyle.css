@@ -78,9 +78,6 @@ body{
     top: 10px;
 }
 
-#CSSContainer, #JSContainer {
-    display: none;
-}
 
 .selected {
     background-color: grey;

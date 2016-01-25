@@ -21,19 +21,26 @@
 
         var buttons = document.getElementsByTagName("li");
 
-        function toggleSelected(){
+       /* var iframe = document.getElementById('ResultContainer');
+        var iframeWrite = (iframe.contentWindow) ? iframe.contentWindow : (iframe.contentDocument.document) ? iframe.contentDocument.document : iframe.contentDocument;
+
+        iframeWrite.contentWindow.document.open();
+        iframeWrite.contentWindow.document.write('Hello World!');
+        iframeWrite.contentWindow.document.close();
+
+        /*function toggleSelected(){
             for(var i = 0; i < buttons.length; i++){
                 buttons[i].addEventListener("click", function(){
 
                     console.log("You clicked!");
 
-                    /*if(buttons.classlist.contains('selected') == true){
+                    if(buttons.classlist.contains('selected') == true){
                         buttons.classlist.remove('selected');
                     }else{
-                        buttons.classlist.add('selected');*/
+                        buttons.classlist.add('selected');
                     }, false)
                 }
-            }
+            } */
 
 
 
@@ -93,7 +100,7 @@
     <div class="codeContainer" id="ResultContainer">
 
         <div class="codeLabel">Result</div>
-        <iframe id="resultFrame"></iframe>
+        <iframeame id="resultFrame"></iframeame>
 
     </div>
 

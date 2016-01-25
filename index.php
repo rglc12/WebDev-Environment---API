@@ -1,3 +1,15 @@
+<?php
+
+	mysqli_connect("104.155.107.144", "up724980", "PaSsWoRd", "WebDevEnvironment");
+
+	if(mysqli_connect_error()) {
+
+		die("Could not connect to Database bitch");
+
+	}
+?>
+
+
 <!doctype html>
 <html lang = "en">
 <head>
@@ -43,7 +55,7 @@
 				</form>
 			</div>
 			<div>
-				<form id="loginForm" action="#" method="post">
+				<form id="signupForm" action="#" method="post">
 					<h2>Sign-up Now!</h2>
 					<label for="signupUsername">Username: </label>
 					<input type="text" name="loginUsername" />
