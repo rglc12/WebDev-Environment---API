@@ -28,10 +28,15 @@
             </nav>
         </section>
     </header>
-    <section class="fixedwidth flexContainer">
-        <div id="profile">
-            [PROFILE]
-        </div>
+    <section class="fixedwidth main">
+        <section class="profileContainer" id="profile">
+            <img src="Images/300x400.jpg" id="dp" alt="Profile Picture" />
+            <ul class="profileNav">
+                <a href="IDE.html" target="_blank"><li>Online IDE</li></a>
+                <a href="logbook.php"><li>Logbook</li></a>
+                <a href="index.php"><li>Logout</li></a>
+            </ul>
+        </section>
         <section class="secondaryContainer">
             <div class="post">
                 test text 1

@@ -18,7 +18,7 @@
     <meta charset = "UTF-8">
 
     <!-- CSS Stylesheet -->
-    <link href="./css/feed.css" rel="stylesheet">
+    <link href="./css/logbook.css" rel="stylesheet">
 
     <!-- Custom Javasript -->
     <script src="#"></script>
@@ -42,9 +42,14 @@
     </section>
 </header>
 <section class="fixedwidth flexContainer">
-    <div id="profile">
-        [PROFILE]
-    </div>
+    <section class="profileContainer" id="profile">
+        <img src="Images/300x400.jpg" id="dp" alt="Profile Picture" />
+        <ul class="profileNav">
+            <a href="IDE.html" target="_blank"><li>Online IDE</li></a>
+            <a href="feed.php"><li>Feed</li></a>
+            <a href="index.php"><li>Logout</li></a>
+        </ul>
+    </section>
     <section class="secondaryContainer" style="background-color: #e0e0e0">
         <h2>[USER FIRST NAME]'s Logbook</h2>
         <textarea id="logbook"></textarea>

@@ -72,7 +72,8 @@ a {
 
 /* Body Content */
 
-.main{
+.flexContainer {
+    display: flex;
     margin-top: 100px;
 }
 
@@ -89,6 +90,7 @@ a {
     padding: 0;
     margin: 0;
 }
+
 .profileNav li {
     font-size: 1.3em;
     width: auto;
@@ -104,29 +106,23 @@ a {
 #dp {
     padding: 5%;
     border-radius: 10%;
-    width: 300px;
-    height: 400px;
+    width: 80%;
+    height: 80%;
+    max-width: 300px;
+    max-height: 400px;
 }
 
 #profile {
-    position: fixed;
-    width: 25%;
+    flex: 1;
     background-color: white;
     height: 85vh;
     margin-right: 20px;
 }
 
 .secondaryContainer {
-    position: relative;
-    left: 35%;
-    width: 65%;
-}
-
-.post {
-    background-color: white;
-    min-height: 10vh;
-    width: 98%;
-    margin-bottom: 2%;
+    display: flex;
+    flex: 2;
+    flex-direction: column;
 }
 
 #logbook{
