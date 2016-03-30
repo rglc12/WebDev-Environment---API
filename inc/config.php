@@ -1,9 +1,9 @@
 <?php
 
-/*Databse Information*/
+/*Database Information*/
 
 const DBHOST = "localhost";         // Host Name
-const DBUSER= "root";               // Username for the databse
+const DBUSER= "root";               // Username for the database
 const DBPASS = "root";              // Database Password
 const DBNAME = "WebDevEnvironment"; // Database Name
 

@@ -7,17 +7,22 @@
 
 include __DIR__.'/../inc/db.php';
 
-if(isset($_POST['Reg'])) {
+try{
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = $_POST['RegUsername'];
+    $password = $_POST['RegPassword'];
 
-    $query = $dbh->prepare("INSERT INTO User (username, password) VALUES (:username, :password);");
-    $results = $query->execute(array(
-        ":username" => $username,
-        ":password" => $password
-    ));
+    if(isset($_POST['Reg'], $username, $password)) {
 
+        $query = $dbh->prepare("INSERT INTO `User` (username, password) VALUES (:username, :password)");
+        $results = $query->execute(array(
+            ":username" => $username,
+            ":password" => $password
+        ));
+    }
+
+    } catch(PDOException $e){
+    echo 'why: ' . $e->getMessage();
 }
 
 ?>

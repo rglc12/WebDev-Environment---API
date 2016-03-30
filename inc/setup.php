@@ -1,10 +1,5 @@
 <?php
 
-/*
- * Should auto-create a database on the server (Provided the user uses
- * the correct IP, DBName, etc., from config.php).
- */
-
 include __DIR__ . '/config.php';
 
 // CONNECT TO THE DATABASE SERVER

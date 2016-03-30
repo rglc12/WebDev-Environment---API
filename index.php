@@ -1,3 +1,7 @@
+<?php
+	include 'api/login.php';
+?>
+
 <!doctype html>
 <html lang = "en">
 <head>
