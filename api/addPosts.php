@@ -1,10 +1,5 @@
 <?php
 
-/*
- * The function to add data to the database... this doesn't want to work
- * but this is from web tutorials and doesn't want to work for me...
- */
-
     if(isset($_POST['post'])){
 
         $question = $_POST['question'];
