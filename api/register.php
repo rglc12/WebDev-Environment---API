@@ -1,17 +1,11 @@
 <?php
 
-include __DIR__.'/../inc/db.php';
+include __DIR__.'/../inc/all.php';
 
-$username = $_POST['RegUsername'];
-$password = $_POST['RegPassword'];
+$regUsername = $_GET['regUsername'];
+$regPassword = $_GET['regPassword'];
 
-if(isset($_POST['Reg'], $username, $password)) {
-
-    $query = $dbh->prepare("INSERT INTO `User` (username, password) VALUES (:username, :password)");
-    $results = $query->execute(array(
-        ":username" => $username,
-        ":password" => $password
-    ));
-}
+$query = $dbh->prepare("INSERT INTO `User`(`username`, `password`) VALUES ('$regUsername', '$regPassword')");
+$query->execute();
 
 ?>

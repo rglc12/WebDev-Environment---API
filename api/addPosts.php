@@ -1,18 +1,15 @@
 <?php
 
-    if(isset($_POST['post'])){
+include __DIR__.'/../inc/all.php';
 
-        $question = $_POST['question'];
-        $details = $_POST['details'];
+    $question = $_GET['question'];
+    $details = $_GET['details'];
+    $id = $_GET['id'];
 
-        $query = "INSERT INTO `Question`(`userID`, `question`, `detail`) VALUES (1, :question, :details)";
+    $query = $dbh->prepare("INSERT INTO `Question`(`userID`, `question`, `detail`) VALUES ('$id', '$question', '$details')");
+    $query->execute();
 
-        $result = $dbh->prepare($query);
+    include __DIR__.'/getPosts.php';
 
-        $execute = $result->execute(array(
-            ':question'=>$question,
-            ':details'=>$details
-        ));
-    }
 
 ?>

@@ -5,7 +5,7 @@
     <meta charset = "UTF-8">
 
     <!-- CSS Stylesheet -->
-    <link href="./css/logbook.css" rel="stylesheet">
+    <link href="./lib/logbook.css" rel="stylesheet">
 
     <!-- Custom Javasript -->
     <script src="#"></script>
@@ -27,6 +27,7 @@
         <img src="Images/300x400.jpg" id="dp" alt="Profile Picture" />
         <ul class="profileNav">
             <a href="IDE.html" target="_blank"><li>Online IDE</li></a>
+            <a href="myPosts.html"><li>My Posts</li></a>
             <a href="feed.html"><li>Feed</li></a>
             <a href="index.php"><li>Logout</li></a>
         </ul>

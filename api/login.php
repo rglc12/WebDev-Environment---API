@@ -1,23 +1,23 @@
 <?php
 
-include __DIR__.'/../inc/db.php';
+/*error with row count*/
 
-if(isset($_POST['Login'])) {
-    $username = $_POST['LogUsername'];
-    $password = $_POST['LogPassword'];
+include __DIR__.'/../inc/all.php';
 
-    $query = $dbh->prepare("SELECT * FROM User WHERE username = ? AND password = ?");
-    $result = $query->execute(array(
-        $username,
-        $password
-    ));
+    $username = $_GET['username'];
+    $password = $_GET['password'];
 
-    $count = $result->rowCount();
-    if ($count == 1) {
-        header("Location: feed.html");
-        return;
-    } else {
-        echo "Boo user... boo you dirty user!";
+    try {
+        $query = $dbh->prepare("SELECT * FROM User WHERE username = '$username' AND password = '$password'");
+        $query->execute();
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+        if ($result->rowCount() > 0) {
+            header("Location: feed.html");
+            return;
+        } else {
+            echo "Boo user... boo you dirty user!";
+        }
+    } catch (PDOException $e) {
+           echo $e->getMessage();
     }
-}
 ?>

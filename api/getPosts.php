@@ -5,7 +5,7 @@
     the foreach loop contains the template of how the data is presented.
 */
 
-include __DIR__.'/../inc/db.php';
+include __DIR__.'/../inc/all.php';
 
     try {
         if (!empty($_GET['SearchQuestion'])) {

@@ -1,7 +1,3 @@
-<?php
-	include 'api/login.php';
-?>
-
 <!doctype html>
 <html lang = "en">
 <head>
@@ -11,7 +7,7 @@
 	<script src="#"></script>
 
 	<!-- CSS Stylesheet -->
-	<link href="./css/style.css" rel="stylesheet">
+	<link href="./lib/style.css" rel="stylesheet">
 	<!-- Google fonts: 'Prociono', 'Arvo' -->
     <link href='http://fonts.googleapis.com/css?family=Prociono' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -29,27 +25,27 @@
 
 		<div class="flexFormContainer">
 			<div id="login-form">
-				<h2>Login</h2>
-				<form method="post">
-					<label for="LogUsername">Username</label>
-					<input type="text" name="LogUsername" id="LogUsername" required="required" placeholder="Username" />
-					<label for="LogPassword">Password</label>
-					<input type="password" name="LogPassword" id="LogPassword" required="required" placeholder="Password" />
-					<input type="submit" name="Login" value="Login" />
-				</form>
+				<h2 id="logTitle">Login</h2>
+				<label for="LogUsername">Username</label>
+				<input type="text" id="LogUsername" required="required" placeholder="Username" />
+				<label for="LogPassword">Password</label>
+				<input type="password" id="LogPassword" required="required" placeholder="Password" />
+				<input type="submit" id="Login" value="Login" />
 			</div>
 			<div id="Reg-form">
-				<h2>Register</h2>
-				<form method="post">
-					<label for="RegUsername">Username</label>
-					<input type="text" name="RegUsername" id="RegUsername" placeholder="Username" />
-					<label for="RegPassword">Password</label>
-					<input type="password" name="RegPassword" id="RegPassword" placeholder="Password" />
-					<input type="submit" name="Reg" value="Register" />
-				</form>
+				<h2 id="regTitle">Register</h2>
+				<label for="RegUsername">Username</label>
+				<input type="text" id="RegUsername" placeholder="Username" />
+				<label for="RegPassword">Password</label>
+				<input type="password" id="RegPassword" placeholder="Password" />
+				<input type="submit" id="Reg" value="Register" />
 			</div>
 		</div>
 	</section>
+
+	<script src="lib/AjaxGet.js"></script>
+	<script src="lib/loginUser.js"></script>
+	<script src="lib/registerUser.js"></script>
 
 </body>
 </html>

@@ -5,10 +5,10 @@
     <meta charset = "UTF-8">
 
     <!-- CSS Stylesheet -->
-    <link href="./css/feed.css" rel="stylesheet">
+    <link href="./lib/feed.css" rel="stylesheet">
 
     <!-- Custom JavaScript -->
-    <script src="#"></script>
+
 
     <!-- Google fonts: 'Prociono', 'Arvo' -->
     <link href='http://fonts.googleapis.com/css?family=Prociono' rel='stylesheet' type='text/css'>
@@ -37,20 +37,27 @@
         <section class="secondaryContainer">
             <!-- Insert data form for question -->
             <div id="post-form">
-                <form method="post">
+                <label>Question/Discussion:</label>
+                <input type="text" id="question" required="required" placeholder="Please enter your Question" />
+                <label>Details</label>
+                <textarea name="details" id="details" placeholder="Any further Details?"></textarea>
+                <input type="submit" name="post1" id="post" value="Post" />
+                <!--<form>
                     <label>Question/Discussion:</label>
                     <input type="text" name="question" id="question" required="required" placeholder="Please enter your Question" />
                     <label>Details</label>
                     <textarea name="details" id="details" placeholder="Any further Details?"></textarea>
-                    <input type="submit" name="post" value="Post" />
-                </form>
+                    <input type="submit" name="post" id="post" value="Post" />
+                </form>-->
             </div>
             <div id="results">
 
             </div>
         </section>
 
-        <script type="text/javascript" src="lib/livesearch.js"></script>
+        <script src="lib/AjaxGet.js"></script>
+        <script src="lib/livesearch.js"></script>
+        <script src="lib/createPost.js"></script>
 
 </body>
 </html>
