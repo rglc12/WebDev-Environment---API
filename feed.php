@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+include 'api/loginCheck.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +13,7 @@
     <link href="./lib/feed.css" rel="stylesheet">
 
     <!-- Custom JavaScript -->
-
-
+    
     <!-- Google fonts: 'Prociono', 'Arvo' -->
     <link href='http://fonts.googleapis.com/css?family=Prociono' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -27,11 +31,10 @@
         <section class="profileContainer" id="profile">
             <img src="Images/300x400.jpg" id="dp" alt="Profile Picture" />
             <ul class="profileNav">
-                <a href="#"><li>Edit Account</li></a>
-                <a href="myPosts.html"><li>My Posts</li></a>
+                <a href="myPosts.php"><li>My Posts</li></a>
                 <a href="IDE.html" target="_blank"><li>Online IDE</li></a>
                 <a href="logbook.php"><li>Logbook</li></a>
-                <a href="index.php"><li>Logout</li></a>
+                <a id="logout" onclick="logout()"><li>Logout</li></a>
             </ul>
         </section>
         <section class="secondaryContainer">
@@ -42,13 +45,6 @@
                 <label>Details</label>
                 <textarea name="details" id="details" placeholder="Any further Details?"></textarea>
                 <input type="submit" name="post1" id="post" value="Post" />
-                <!--<form>
-                    <label>Question/Discussion:</label>
-                    <input type="text" name="question" id="question" required="required" placeholder="Please enter your Question" />
-                    <label>Details</label>
-                    <textarea name="details" id="details" placeholder="Any further Details?"></textarea>
-                    <input type="submit" name="post" id="post" value="Post" />
-                </form>-->
             </div>
             <div id="results">
 
@@ -56,8 +52,10 @@
         </section>
 
         <script src="lib/AjaxGet.js"></script>
+        <script src="lib/reply.js"></script>
         <script src="lib/livesearch.js"></script>
         <script src="lib/createPost.js"></script>
+        <script src="lib/logout.js"></script>
 
 </body>
 </html>

@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_SESSION['username'])) {
+
+	header("Location: /../feed.php");
+
+}
+?>
 <!doctype html>
 <html lang = "en">
 <head>
@@ -25,7 +33,7 @@
 
 		<div class="flexFormContainer">
 			<div id="login-form">
-				<h2 id="logTitle">Login</h2>
+				<h2>Login <span id="logValid">- INVALID LOGIN DETAILS</span></h2>
 				<label for="LogUsername">Username</label>
 				<input type="text" id="LogUsername" required="required" placeholder="Username" />
 				<label for="LogPassword">Password</label>
@@ -33,7 +41,7 @@
 				<input type="submit" id="Login" value="Login" />
 			</div>
 			<div id="Reg-form">
-				<h2 id="regTitle">Register</h2>
+				<h2>Register <span id="regValid"></span></h2>
 				<label for="RegUsername">Username</label>
 				<input type="text" id="RegUsername" placeholder="Username" />
 				<label for="RegPassword">Password</label>
@@ -44,8 +52,7 @@
 	</section>
 
 	<script src="lib/AjaxGet.js"></script>
-	<script src="lib/loginUser.js"></script>
-	<script src="lib/registerUser.js"></script>
+	<script src="lib/account.js"></script>
 
 </body>
 </html>

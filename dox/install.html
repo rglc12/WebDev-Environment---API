@@ -1,0 +1,37 @@
+<!doctype html>
+<head>
+	<title>WebDevEnvironment - Installation Guide</title>
+	<meta charset = "UTF-8">
+
+	<!-- Google fonts: 'Prociono' -->
+	<link href='http://fonts.googleapis.com/css?family=Prociono' rel='stylesheet' type='text/css'>
+
+	<style>
+		* {
+			font-family: 'Prociono', serif;
+		}
+		li {
+			max-width:50%;
+		}
+	</style>
+</head>
+<body>
+	<h1>WebDevEnvironment Installation Guide</h1>
+
+	<ol>
+		<li>To install the API, upload all files onto your server. Once they are uploaded, the database needs to be installed.</li>
+		<li>Configure the <code>inc/config.php</code> file has the correct details in in the following sections; DBHOST, DBUSER and DBPASS. <br />
+			By default they are set to: <br />
+			<ul>
+				<li>DBHOST: &#39;localhost&#39;</li>
+				<li>DBUSER: &#39;root&#39;</li>
+				<li>DBPASS: &#39;root&#39;</li>
+				<li>DBNAME: &#39;WebDevEnvironment&#39;</li>
+			</ul>
+		</li>
+		<p><strong>Note: DBNAME should not be changed!</strong></p>
+		<li>Once the information matches the same as your server's information (IP address, database username and database password for that user), run the file <code>inc/setup.php</code>.
+			Providing that the correct information was inserted into the required variables, you will be redirected to <code>index.php</code></li>
+		<p>You're now good to go! Direct youself to index.php and begin using WebDevEnvironment.</p>
+</body>
+</html>

@@ -1,8 +1,6 @@
 <?php
 
 // Database connection file
-include __DIR__. '/config.php';
-
 $dsn = 'mysql:host='.DBHOST;
 
 try {
@@ -11,9 +9,9 @@ try {
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 }
-catch(PDOException $failure) {
+catch(PDOException $e) {
 
-    echo 'Connection failed: ' . $failure->getMessage();
+    echo 'Connection failed: ' . $e->getMessage();
 
 }
 

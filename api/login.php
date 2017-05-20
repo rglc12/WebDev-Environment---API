@@ -1,23 +1,24 @@
 <?php
 
-/*error with row count*/
+session_start();
 
 include __DIR__.'/../inc/all.php';
 
+    // Variables from the AJAX call
     $username = $_GET['username'];
-    $password = $_GET['password'];
+    $password = md5($_GET['password']); //Basic encryption
 
-    try {
-        $query = $dbh->prepare("SELECT * FROM User WHERE username = '$username' AND password = '$password'");
-        $query->execute();
-        $result = $query->fetch(PDO::FETCH_ASSOC);
-        if ($result->rowCount() > 0) {
-            header("Location: feed.html");
-            return;
-        } else {
-            echo "Boo user... boo you dirty user!";
-        }
-    } catch (PDOException $e) {
-           echo $e->getMessage();
+    // Check if record exists
+    $query = $dbh->prepare("SELECT COUNT('id') FROM User WHERE username = '$username' AND password = '$password'");
+    $query->execute();
+    $result = $query->fetchColumn();
+
+    if ($result == 1) {             // If exists, login
+
+        $_SESSION['username'] = $username;
+        print_r(true);
+
+    } else {                        // else prevent access to other pages
+        print_r(false);
     }
 ?>

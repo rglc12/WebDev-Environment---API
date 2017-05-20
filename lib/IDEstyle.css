@@ -2,7 +2,7 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: 'Prociono', 'Inconsolata', serif;
     font-weight: 300;
 }
 
@@ -17,42 +17,53 @@ body{
 #menuBar {
     width: 100%;
     height: 40px;
-    background-color: #e0e0e0;
+    background-color: #031d44;
     border-bottom: 1px solid grey;
+    display: flex;
 }
 
 #logo {
-    padding: 5px 0 0 20px;
+    color: #e0e0e0;
+    padding: 5px 2vw;
     font-weight: bold;
     font-size: 1.2em;
-    float: left;
 }
 
 #runButton {
-    float: right;
-    padding: 5px 10px 0 0;
+    position: fixed;
+    top: 5px;
+    right: 5%;
+    z-index: 2;
 }
 
 #run {
     font-size: 1.2em;
 }
 
-#toggles {
-    width: 200px;
-    margin: 0 auto;
-    list-style: none;
+iframe {
+    width: 100%;
+}
+
+.toggles {
+
+    width: 10vw;
+    margin: auto;
+    text-align: center;
     border: 1px solid grey;
     border-radius: 3px;
     height: 27px;
     padding: 0;
-    position: relative;
-    top: 5px;
+    background: white;
+    cursor: pointer;
+    display: inline-block;
 }
 
-#toggles li {
-    float: left;
-    border-right: 1px solid grey;
-    padding: 5px 7px;
+.hidden{
+    display: none;
+}
+
+#toggles {
+    padding-right: 5vw;
 }
 
 .codeContainer {
@@ -66,7 +77,7 @@ body{
     height: 100%;
     border: none;
     border-right: 1px solid grey;
-    font-family: monotype;
+    font-family: Inconsolata;
     font-size: 0.9em;
     box-sizing: border-box;
     padding: 5px;
@@ -78,13 +89,62 @@ body{
     top: 10px;
 }
 
-
-.selected {
-    background-color: grey;
-}
-
 iframe {
     height: 100%;
     border: none;
 }
 
+input, label {
+    position: fixed;
+    bottom: 3%;
+    z-index: 3;
+}
+#htmlLabel, #html {
+    right: 82%;
+}
+
+#cssLabel, #css {
+    right: 57%;
+}
+
+#jsLabel, #js {
+    right: 32%;
+}
+
+#resultLabel, #result {
+    right: 7%;
+}
+
+/* When a toggle button is clicked/checked or not (Show or Hide textareas) */
+
+#html:not(checked) + #HTMLContainer {
+    display: none;
+}
+
+#html:checked + #HTMLContainer {
+    display: block;
+}
+
+#css:not(checked) ~ #CSSContainer {
+    display: none;
+}
+
+#css:checked ~ #CSSContainer {
+    display: block;
+}
+
+#js:not(checked) ~ #JSContainer {
+    display: none;
+}
+
+#js:checked ~ #JSContainer {
+    display: block;
+}
+
+#result:not(checked) ~ #ResultContainer {
+    display: none;
+}
+
+#result:checked ~ #ResultContainer {
+    display: block;
+}

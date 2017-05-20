@@ -33,8 +33,9 @@ body{
 }
 
 a {
-     color: #505050;
-     text-decoration: none;
+	color: #505050;
+	text-decoration: none;
+	cursor: pointer;
 
 }
 
@@ -109,6 +110,10 @@ input[type=submit] {
 	border-radius: 4px;
 	cursor: pointer;
 }
+
+#logValid, #regValid {
+	display: none;
+}
 /* End of Form Styling */
 
 /* Media Queries */
@@ -132,17 +137,9 @@ input[type=submit] {
 		margin-top: 25px;
 		font-size: 1.4em;
 	}
-	
-	#welcome #nav {
-		float: right;
-		font-size: 1em;
-	}
 
-	#welcome #nav li {
-		 float: left;
-		 padding: 12.5px 0 20px 23px;
-	}
 }
+
 @media screen and (max-width: 550px) {
    #logo {
 		width:200px;
@@ -156,7 +153,21 @@ input[type=submit] {
 	#welcome #nav {
 		display: none;
 	}
-	.flexbox-container{
-		margin-top: 75px;
+
+	.flexFormContainer{
+		margin-top: 15vh;
+		flex-direction: column;
+	}
+
+	.flexFormContainer > div:first-child {
+		margin-right: 0;
+	}
+
+	.flexFormContainer > div {
+		flex: 1;
+		margin-top: 5vh;
+		padding: 10px;
+		background-color: #ffffff;
+		opacity: 0.9;
 	}
 }

@@ -1,0 +1,51 @@
+<!doctype html>
+<head>
+	<title>WebDevEnvironment - Specification</title>
+	<meta charset = "UTF-8">
+
+	<!-- Google fonts: 'Prociono' -->
+	<link href='http://fonts.googleapis.com/css?family=Prociono' rel='stylesheet' type='text/css'>
+
+	<style>
+		* {
+			font-family: 'Prociono', serif;
+		}
+		p {
+			max-width:50%;
+		}
+	</style>
+</head>
+<body>
+	<h1>WebDevEnvironment Specification</h1>
+
+	<p>WebDevEnvironment is an only application designed for aspiring web developers where each user is presented with an online IDE to develop their HTML, CSS and JavaScript, a logbook where they can document their findings, store code and developments etc. and finally, a posting system (similar to a forum or Stack Overflow). </p>
+	<p>Once a user is logged in via the index.php page, they are directed to the feed page which displays all posted questions with their corresponding comments in order of when the post was created. Information about when the post was created was added for the user to see how old the discussion/post was. </p>
+	<p>Above all the posts is the posting system, i.e. the adding a question with its details form. Here the user will insert their question (required) and details of the question providing it needs further explaining, etc. Once a post has been added to the database via this form (AJAX), the page displays the post immediately due to the Ajax functions used on this page. The original idea was to have this form fixed in place and have all th post scroll under is (like the top bar) but I thought that would make the page look too still and not alive... Boring!</p>
+	<p>There is a fixed div to the left of the window displaying the navigation for the application. This resizes and changes position based on the size of the window (I.e. mobile, tablet, desktop) so therefore is accessible from multiple media platforms. </p>
+	<p>From the navigation, the user can be directed to the following pages (Providing they are not already on that page): </p>
+
+	<ul>
+		<li>myPosts.php</li>
+		<li>IDE.html</li>
+		<li>logbook.php</li>
+		<li>feed.php</li>
+		<li>index.php (Logout function) </li>
+	</ul>
+
+	<p>My Posts (myPosts.php) displays all the posts created by the current logged in user. It is all displayed in the same fashion as the feed is on feed.php (navigation/profile to the left and the posts to the right). Here, the user can edit and delete any posts that they have created. All updates and deletes happen asynchronously and the page is updated via Ajax. This functionality is only accessible from this page. </p>
+	<p>On both the Feed page (feed.php) and My Posts (myPosts.php), a search bar is fixed to the top of the window. This is for a live search to search through the posts to find a specific post. Once any input is prompted, via Ajax, the posts displayed are updated and only show the posts that relate to the input from the search bar. </p>
+	<p>The logbook page (logbook.php) originally displays a textarea to the right of the window when the user logs in for the first time of is accessing it for the first time. Within this textarea, the user can insert any form of string (including html code) which is automatically sent to the database and updates the logbook for that user based on any change to the string. This is also an Ajax function so the page never reloads. Once the user directs themselves to another page and comes back to the logbook, the update version is still there. This logbook is downloadable as a .txt file in case the user wants to download it for a project, saving a particular part of the logbook, etc.</p>
+	<p>The Online IDE is self-explanatory. This is where users go to code their webpages using HTML, CSS and even JavaScript. There is four fields/textareas for HTML, CSS, JavaScript and the Result of the compiled code. Each field can be hidden or made visible if the user wants more space to code HTML for example. This happens when the user clicks on any of the four buttons at the bottom of the window. To run the code with the textareas, the user simply clicks the Run button at the top left of the window. </p>
+	<p>Towards the end of developing WebDevEnvironment, all pages were .html instead of .php and Ajax was running the entire API effectively but due to me using a poorly created login system that relied on sessions, each pages had to start with a session start variable and therefore teh file had to be .php.</p>
+	<p>Due to poor health and other courseworks, I was under pressure to get as much done as possible in the short time I had. Sadly, some functionality has been left out from the original proposed specification (these are specified in the section below). </p>
+	<p>One part of my specification has been completely left out due to it being REDUNDANT (in my opinion), the Drag and Drop text function. This was left out due to the built in drag and drop of text in most, if not all, browsers.</p>
+	<h2>Possible changes/updates:</h2>
+	<ul>
+		<li>An IDE that updates the results field asynchronously based on the inputs in the HTML, CSS and JavaScript fields.</li>
+		<li>OAuth login so that all pages can be .html instead of .php, due to sessions for the login. </li>
+		<li>Functionality to edit a post and/or reply.</li>
+		<li>Functionality to drag and drop text across tabs on the browser.</li>
+		<li>Profile pages allowing you to upload an image and display that instead of the default 300 x 400 image.</li>
+	</ul>
+</body>
+</html>
